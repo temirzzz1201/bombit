@@ -1,5 +1,7 @@
 <script setup>
 const props = defineProps(["store"]);
+
+console.log(props.store.sortKey);
 </script>
 
 <template>
@@ -8,74 +10,84 @@ const props = defineProps(["store"]);
   >
     <tr>
       <th
-        class="p-2 border-r border-gray-300 dark:border-gray-700 w-[50px]"
+        class="p-2 border-r border-gray-300 dark:border-gray-700 whitespace-nowrap relative"
         @click="store.setSort('id')"
-        :title="
-          'Ид - сортировка ' +
-          (store.sortKey === 'id'
-            ? store.sortDirection === 1
-              ? '↑'
-              : '↓'
-            : '')
-        "
+        :title="'Ид - сортировка '"
       >
         ИД
+        <span class="absolute text-2xl bottom-2 pl-1.5">
+          {{
+            store.sortKey === "id"
+              ? store.sortDirection === 1
+                ? "↑"
+                : "↓"
+              : ""
+          }}
+        </span>
       </th>
       <th
-        class="p-2 border-r border-gray-300 dark:border-gray-700 w-[80px]"
+        class="p-2 border-r border-gray-300 dark:border-gray-700 whitespace-nowrap relative"
         @click="store.setSort('albumId')"
-        :title="
-          'Альбом - сортировка ' +
-          (store.sortKey === 'albumId'
-            ? store.sortDirection === 1
-              ? '↑'
-              : '↓'
-            : '')
-        "
+        :title="'Альбом - сортировка '"
       >
         Альбом
+        <span class="absolute text-2xl bottom-2 pl-1.5">
+          {{
+            store.sortKey === "albumId"
+              ? store.sortDirection === 1
+                ? "↑"
+                : "↓"
+              : ""
+          }}
+        </span>
       </th>
       <th
-        class="p-2 border-r border-gray-300 dark:border-gray-700"
+        class="p-2 border-r border-gray-300 dark:border-gray-700 whitespace-nowrap relative"
         @click="store.setSort('title')"
-        :title="
-          'Название - сортировка ' +
-          (store.sortKey === 'title'
-            ? store.sortDirection === 1
-              ? '↑'
-              : '↓'
-            : '')
-        "
+        :title="'Название - сортировка '"
       >
         Название
+        <span class="absolute text-2xl bottom-2 pl-1.5">
+          {{
+            store.sortKey === "title"
+              ? store.sortDirection === 1
+                ? "↑"
+                : "↓"
+              : ""
+          }}
+        </span>
       </th>
       <th
-        class="p-2 border-r border-gray-300 dark:border-gray-700 w-[200px]"
+        class="p-2 border-r border-gray-300 dark:border-gray-700 whitespace-nowrap relative"
         @click="store.setSort('url')"
-        :title="
-          'Ссылка - сортировка ' +
-          (store.sortKey === 'url'
-            ? store.sortDirection === 1
-              ? '↑'
-              : '↓'
-            : '')
-        "
+        :title="'Ссылка - сортировка '"
       >
         Ссылка
+        <span class="absolute text-2xl bottom-2 pl-1.5">
+          {{
+            store.sortKey === "url"
+              ? store.sortDirection === 1
+                ? "↑"
+                : "↓"
+              : ""
+          }}
+        </span>
       </th>
       <th
-        class="p-2 w-[120px]"
+        class="p-2 whitespace-nowrap relative block mr-2"
         @click="store.setSort('thumbnailUrl')"
-        :title="
-          'Миниатюра - сортировка ' +
-          (store.sortKey === 'thumbnailUrl'
-            ? store.sortDirection === 1
-              ? '↑'
-              : '↓'
-            : '')
-        "
+        :title="'Миниатюра - сортировка '"
       >
         Миниатюра
+        <span class="absolute text-2xl bottom-2 pl-1.5">
+          {{
+            store.sortKey === "thumbnailUrl"
+              ? store.sortDirection === 1
+                ? "↑"
+                : "↓"
+              : ""
+          }}
+        </span>
       </th>
     </tr>
   </thead>

@@ -5,10 +5,10 @@ const props = defineProps(["store"]);
 </script>
 
 <template>
-  <header class="w-full max-w-md h-[40px] flex gap-2 mb-8 items-center">
+  <header class="w-full max-w-[600px] h-[40px] flex gap-2 mb-8 items-center">
     <UIInput
       v-model="store.albumIdsInput"
-      placeholder="Введите ID альбомов через пробел"
+      placeholder="Введите ID альбомов через пробел (например: 1 2 3)"
     />
 
     <UIButton
