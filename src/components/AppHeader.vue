@@ -9,6 +9,7 @@ const props = defineProps(["store"]);
     <UIInput
       v-model="store.albumIdsInput"
       placeholder="Введите ID альбомов через пробел (например: 1 2 3)"
+      :type="'number'"
     />
 
     <UIButton
